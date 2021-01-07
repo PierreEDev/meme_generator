@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ImageForm } from '../ImageForm/ImageForm';
 
-export const ImageList = ({ video }) => {
+export const ImageItem = ({template}) => {
+  const [showForm, setShowForm] = useState(false);
 
     return (
-      <div style={{textAlign: "center"}}>
-          hello world !
+      <div class="col">
+        <img style={{width:200}} key={template.id} src={template.url} alt={template.name} onClick={() => setShowForm(!showForm)}/>
+        {showForm && <ImageForm/>}
       </div>
     );
 };
