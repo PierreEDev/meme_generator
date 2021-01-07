@@ -1,7 +1,7 @@
 import React from 'react';
 import { meme } from '../../hooks/useMemes';
 
-export const ImageList = ({ video }) => {
+export const ImageList = () => {
 
     return (
         <div style={{ textAlign: "center" }}>
