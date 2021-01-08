@@ -7,7 +7,6 @@ import { ImageForm } from './ImageForm/ImageForm';
 export const App = () => {
     const [templates, setMeme] = useMemes();
     
-    
     return (
         <div class='container'>
             <div class='row'>
