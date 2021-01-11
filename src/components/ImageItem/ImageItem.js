@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ImageForm } from '../ImageForm/ImageForm';
 
-export const ImageItem = ({template}) => {
+export const ImageItem = ({template, rendu}) => {
   const [showForm, setShowForm] = useState(false);
   const [selectedMeme, setSelectedMeme] = useState('');
 
@@ -11,7 +11,7 @@ export const ImageItem = ({template}) => {
           setShowForm(!showForm)
           setSelectedMeme(template.id)
         }}/>
-        {showForm && <ImageForm idMeme={selectedMeme} />}
+        {showForm && <ImageForm idMeme={selectedMeme} rendu={rendu}/>}
       </div>
     );
 };

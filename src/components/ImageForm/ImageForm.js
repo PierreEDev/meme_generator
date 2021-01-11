@@ -6,9 +6,11 @@ const objectToQueryParam = (obj) => {
     return '?' + params.join('&')
 }
 
-export const ImageForm = ({idMeme}) => {
+export const ImageForm = ({idMeme, rendu}) => {
     const [topText, setTopText] = useState('');
     const [bottomText, setBottomText] = useState('');
+    const [memeRendu, setMemeRendu] = useState(null);
+
 
     return (
         <form onSubmit={async e => {
@@ -22,8 +24,12 @@ export const ImageForm = ({idMeme}) => {
             }    
             const response = await fetch(apiCreateMeme.defaults.baseURL + `${objectToQueryParam(params)}`);
 
-            const data = await response.json();
-            console.log(data);
+            const json = await response.json();
+            console.log(json.data.url);
+            setMemeRendu(json.data.url);
+
+            rendu(memeRendu);
+            
         }}>
             <label>Text 1 :</label>
             <input type="text" name="text1" value={topText} onChange={e => setTopText(e.target.value)}/>

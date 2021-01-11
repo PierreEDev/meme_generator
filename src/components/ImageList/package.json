@@ -1,6 +1,0 @@
-{
-    "name": "ImageList",
-    "version": "0.1.0",
-    "private": true,
-    "main": "./ImageList.js"
-}
