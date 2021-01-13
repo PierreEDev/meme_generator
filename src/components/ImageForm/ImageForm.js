@@ -25,7 +25,7 @@ export const ImageForm = ({idMeme, rendu}) => {
             const response = await fetch(apiCreateMeme.defaults.baseURL + `${objectToQueryParam(params)}`);
 
             const json = await response.json();
-            console.log(json.data.url);
+            
             setMemeRendu(json.data.url);
 
             rendu(memeRendu);

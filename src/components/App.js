@@ -5,25 +5,30 @@ import { ImageRendu } from './ImageRendu/ImageRendu';
 
 
 export const App = () => {
-    const [templates, setMeme] = useMemes();
-    const [renduFinal, setRenduFinal] = useState(null);
+    const [meme, setMeme] = useMemes();
+    const [renduFinal, setRenduFinal] = useState([]);
     
-    const rendu = (lien) => {
-        setRenduFinal(lien);
+    var rendu = (lien) => {  
+        var state = renduFinal.concat(lien)
+        setRenduFinal(state);
     }
 
     return (
-        <div class='container-fluid'>
+        <div class='container-fluid' style={{backgroundColor: 'gray'}}>
             <div class='row'>
                 <div class='col-9'>
+                    <h1 class='text-center'>Générateur de memes</h1>
                     <div class='row'>
-                        {templates.map(template => {
+                        {meme.map(template => {
                             return <ImageItem template={template} rendu={rendu}/>
                         })}
                     </div>
                 </div>
-                <div class='col-3'>
-                    <ImageRendu renduForm={renduFinal}/>
+                <div class='col-3' style={{backgroundColor: 'silver'}}>
+                    <h2 class='text-center'>Rendu des memes</h2>
+                    {renduFinal.map(renduForm => {
+                        return <ImageRendu renduForm={renduForm} />
+                    })}
                 </div>
             </div>
         </div>
