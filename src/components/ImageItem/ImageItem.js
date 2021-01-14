@@ -6,7 +6,7 @@ export const ImageItem = ({template, rendu}) => {
   const [selectedMeme, setSelectedMeme] = useState('');
 
     return (
-      <div class="col">
+      <div class="col" style={{marginTop: 20}}>
         <img style={{width:200}} key={template.id} src={template.url} alt={template.name} onClick={() => {
           setShowForm(!showForm)
           setSelectedMeme(template.id)
