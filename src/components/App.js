@@ -5,7 +5,7 @@ import { ImageRendu } from './ImageRendu/ImageRendu';
 
 
 export const App = () => {
-    const [meme, setMeme] = useMemes();
+    const [meme] = useMemes();
     const [renduFinal, setRenduFinal] = useState([]);
     
     var rendu = (lien) => {  

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import apiMeme from '../apis/apiMeme';
 
 export const useMemes = () => {
